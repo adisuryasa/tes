@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Toolabs</title>
+</head>
+
+<body class="bg-primary overflow-x-hidden">
+
+    <section id="loading" class="fixed top-0 left-0 w-full h-full bg-primary flex items-center justify-center z-50">
+        <div class="p-10">
+            <img id="logo" class="w-full h-auto mx-auto" src="https://cdn.toolabs.live/img/landing/Logo_Only.gif" alt="Toolabs Logo">
+        </div>
+    </section>
+      
+
+    <nav id="primaryNav" class="hidden bg-primary shadow-nav p-6 sticky top-0 z-50 transition ease-in-out duration-300">
+        <div class="container flex items-center justify-between">
+            <div class="flex items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 mr-4 relative">
+                    <div class="block-logo">
+                        <img id="logo" class="w-auto" src="https://cdn.toolabs.live/img/extension/logo.png" alt="Toolabs Logo">
+                    </div>
+                </div>
+            </div>
+            <div class="ml-4 relative flex items-center justify-end w-full">
+                <!-- Searchbar icon -->
+                <div class="searchbar mr-4" id="searchbar-button">
+                    <form action="#" class="relative flex items-center w-full">
+                        <input id="searchbar-input" type="text" placeholder="Search Canva...">
+                        <button>
+                            <svg width="20" height="20" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3851 12.4461C10.0371 13.5232 8.32776 14.0432 6.60827 13.8994C4.88877 13.7556 3.28961 12.9588 2.13922 11.6728C0.988832 10.3867 0.374549 8.70899 0.422536 6.98415C0.470522 5.25932 1.17713 3.61834 2.39725 2.39822C3.61736 1.17811 5.25835 0.471499 6.98318 0.423512C8.70801 0.375526 10.3857 0.989809 11.6718 2.1402C12.9579 3.29058 13.7546 4.88975 13.8984 6.60924C14.0422 8.32874 13.5222 10.038 12.4451 11.3861L17.6011 16.5411C17.6748 16.6097 17.7339 16.6925 17.7749 16.7845C17.8159 16.8765 17.8379 16.9758 17.8397 17.0765C17.8415 17.1772 17.8229 17.2773 17.7852 17.3707C17.7475 17.4641 17.6913 17.5489 17.6201 17.6201C17.5489 17.6913 17.4641 17.7475 17.3707 17.7852C17.2773 17.8229 17.1773 17.8414 17.0766 17.8397C16.9759 17.8379 16.8766 17.8158 16.7846 17.7748C16.6926 17.7339 16.6098 17.6748 16.5411 17.6011L11.3851 12.4461ZM3.46009 10.8841C2.72613 10.15 2.22624 9.21489 2.0236 8.19684C1.82096 7.17878 1.92466 6.1235 2.3216 5.16437C2.71854 4.20523 3.3909 3.38529 4.2537 2.80817C5.11651 2.23105 6.13103 1.92265 7.16906 1.92195C8.20709 1.92125 9.22203 2.22828 10.0856 2.80424C10.9492 3.3802 11.6226 4.19924 12.0209 5.15784C12.4191 6.11644 12.5242 7.17158 12.323 8.18991C12.1217 9.20823 11.6231 10.144 10.8901 10.8791L10.8851 10.8841L10.8801 10.8881C9.89518 11.8707 8.56052 12.4222 7.16926 12.4214C5.77801 12.4207 4.44394 11.8678 3.46009 10.8841Z" fill="white"/>
+                            </svg>                    
+                        </button>
+                    </form>
+                </div>
+                <!-- User icon with dropdown -->
+                <div>
+                    <div id="user-menu-button" class="cursor-pointer">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M23.4005 26.1992C23.4005 23.9714 22.5155 21.8348 20.9402 20.2595C19.3649 18.6842 17.2283 17.7992 15.0005 17.7992C12.7726 17.7992 10.6361 18.6842 9.06077 20.2595C7.48546 21.8348 6.60046 23.9714 6.60046 26.1992"
+                                stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M14.9995 17.8005C18.0923 17.8005 20.5995 15.2933 20.5995 12.2005C20.5995 9.10767 18.0923 6.60046 14.9995 6.60046C11.9067 6.60046 9.39954 9.10767 9.39954 12.2005C9.39954 15.2933 11.9067 17.8005 14.9995 17.8005Z"
+                                stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M15 29C22.732 29 29 22.732 29 15C29 7.26801 22.732 1 15 1C7.26801 1 1 7.26801 1 15C1 22.732 7.26801 29 15 29Z"
+                                stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </div>
+                <!-- Dropdown menu -->
+                <div id="user-menu"
+                    class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden">
+                    <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button">
+                        <a href="#" id="dashboard-url" target="_blank" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                            role="menuitem">Dashboard</a>
+                        <a href="#" id="profile-url" target="_blank" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                            role="menuitem">Profile</a>
+                        <a href="#" id="signout" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Sign
+                            out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="banner" class="hidden container mx-auto px-6 lg:px-0">
+        <div class="swiper-container mt-6 rounded-2xl lg:rounded-3xl overflow-hidden">
+            <div class="swiper-wrapper h-52 lg:h-50vh"> </div>
+            <!-- Pagination sebagai bar horizontal -->
+            <div class="swiper-pagination flex justify-center mt-4 "></div>
+        </div>
+    </section>
+
+    <section id="mainContent" class="hidden">
+        <div class="sticky top-0 transition ease-in-out duration-300 py-2 px-6 lg:px-0 bg-primary my-5" id="categories">
+            <div class="flex items-center overflow-hidden relative container mx-auto">
+                <button class="nav prev  text-white bg-prevGradient absolute left-0 p-2 pl-3 w-11 flex justify-start z-10" id="navSlideLeft">&#10094;</button>
+                <div class="categories flex overflow-x-auto w-full space-x-3 py-2 pr-10" id="categories-container">
+                    
+                </div>
+                <button class="nav next  text-white absolute right-0 bg-nextGradient p-2 pr-3 w-11 flex justify-end z-10" id="navSlideRight">&#10095;</button>
+            </div>
+        </div>
+
+
+        <div class="container px-6 lg:px-0 space-y-8 mx-auto">
+            <div id="tools-container"></div>
+
+            <!-- <div class="toolsGroup py-2">
+                <h1 class="text-2xl font-semibold text-white">Streaming</h1>
+                <div class="mt-4 space-y-4">
+                    <div class="group flex flex-col  rounded-2xl bg-accordion p-5 text-white" tabindex="1">
+                        <div class="flex cursor-pointer py-1 items-center justify-between">
+                            <div class="flex gap-5 items-center">
+                                <img src="./img/netflix.png" alt="netflix logo" class="w-11 h-auto rounded-2xl">
+                                <span class="text-lg"> Netflix </span>
+                            </div>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Chevron-icon-drop-down-menu-WHITE.png"
+                                class="h-auto w-4 transition-all duration-500 group-focus:-rotate-180" />
+                        </div>
+                        <div class="invisible h-auto max-h-0 items-center opacity-0 transition-all group-focus:visible group-focus:max-h-screen group-focus:opacity-100 group-focus:duration-1000">
+                            <p class="mt-2 text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                            commodo consequat.</p>
+                            <div class="server-wrapper flex flex-wrap gap-4 mt-6 text-sm">
+                                <button class="serverItem px-3 py-2 server-active">Server 1</button>
+                                <button class="serverItem px-3 py-2">Server 2</button>
+                                <button class="serverItem px-3 py-2">Server 3</button>
+                                <button class="serverItem px-3 py-2">Server 4</button>
+                                <button class="serverItem px-3 py-2">Server 5</button>
+                                <button class="serverItem px-3 py-2 server-disable">
+                                    Server 6
+                                    <span class="serverTooltip">Under Maintenance</span>
+                                    <img src="./img/disable-icon.png" alt="">
+                                </button>
+
+                                <button class="serverItem px-3 py-2 server-disable">
+                                    Server 7
+                                    <span class="serverTooltip">Under Maintenance</span>
+                                    <img src="./img/disable-icon.png" alt="">
+                                </button>
+                                <button class="serverItem px-3 py-2 server-disable">
+                                    Server 8
+                                    <span class="serverTooltip">Under Maintenance</span>
+                                    <img src="./img/disable-icon.png" alt="">
+                                </button>
+                            </div>
+                            
+                            
+                            
+                            
+                        </div>
+                    </div>
+
+                    <div class="group flex flex-col  rounded-2xl bg-accordion p-5 text-white" tabindex="1">
+                        <div class="flex cursor-pointer py-1 items-center justify-between">
+                            <div class="flex gap-5 items-center">
+                                <img src="./img/netflix.png" alt="netflix logo" class="w-11 h-auto rounded-2xl">
+                                <span class="text-lg"> Netflix </span>
+                            </div>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Chevron-icon-drop-down-menu-WHITE.png"
+                                class="h-auto w-4 transition-all duration-500 group-focus:-rotate-180" />
+                        </div>
+                        <div class="invisible h-auto max-h-0 items-center opacity-0 transition-all group-focus:visible group-focus:max-h-screen group-focus:opacity-100 group-focus:duration-1000">
+                            <p class="mt-2 text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                            commodo consequat.</p>
+                            <div class="server-wrapper flex flex-wrap gap-4 mt-6 text-sm">
+                                <button class="serverItem px-3 py-2 server-active">Server 1</button>
+                                <button class="serverItem px-3 py-2">Server 2</button>
+                                <button class="serverItem px-3 py-2">Server 3</button>
+                                <button class="serverItem px-3 py-2">Server 4</button>
+                                <button class="serverItem px-3 py-2">Server 5</button>
+                                <button class="serverItem px-3 py-2 server-disable">
+                                    Server 6
+                                    <span class="serverTooltip">Under Maintenance</span>
+                                    <img src="./img/disable-icon.png" alt="">
+                                </button>
+
+                                <button class="serverItem px-3 py-2 server-disable">
+                                    Server 7
+                                    <span class="serverTooltip">Under Maintenance</span>
+                                    <img src="./img/disable-icon.png" alt="">
+                                </button>
+                                <button class="serverItem px-3 py-2 server-disable">
+                                    Server 8
+                                    <span class="serverTooltip">Under Maintenance</span>
+                                    <img src="./img/disable-icon.png" alt="">
+                                </button>
+                            </div>
+                            
+                            
+                            
+                            
+                        </div>
+                    </div>
+
+                    <div class="group flex flex-col  rounded-2xl bg-accordion p-5 text-white" tabindex="1">
+                        <div class="flex cursor-pointer py-1 items-center justify-between">
+                            <div class="flex gap-5 items-center">
+                                <img src="./img/netflix.png" alt="netflix logo" class="w-11 h-auto rounded-2xl">
+                                <span class="text-lg"> Netflix </span>
+                            </div>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Chevron-icon-drop-down-menu-WHITE.png"
+                                class="h-auto w-4 transition-all duration-500 group-focus:-rotate-180" />
+                        </div>
+                        <div class="invisible h-auto max-h-0 items-center opacity-0 transition-all group-focus:visible group-focus:max-h-screen group-focus:opacity-100 group-focus:duration-1000">
+                            <p class="mt-2 text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                            commodo consequat.</p>
+                            <div class="server-wrapper flex flex-wrap gap-4 mt-6 text-sm">
+                                <button class="serverItem px-3 py-2 server-active">Server 1</button>
+                                <button class="serverItem px-3 py-2">Server 2</button>
+                                <button class="serverItem px-3 py-2">Server 3</button>
+                                <button class="serverItem px-3 py-2">Server 4</button>
+                                <button class="serverItem px-3 py-2">Server 5</button>
+                                <button class="serverItem px-3 py-2 server-disable">
+                                    Server 6
+                                    <span class="serverTooltip">Under Maintenance</span>
+                                    <img src="./img/disable-icon.png" alt="">
+                                </button>
+
+                                <button class="serverItem px-3 py-2 server-disable">
+                                    Server 7
+                                    <span class="serverTooltip">Under Maintenance</span>
+                                    <img src="./img/disable-icon.png" alt="">
+                                </button>
+                                <button class="serverItem px-3 py-2 server-disable">
+                                    Server 8
+                                    <span class="serverTooltip">Under Maintenance</span>
+                                    <img src="./img/disable-icon.png" alt="">
+                                </button>
+                            </div>
+                            
+                            
+                            
+                            
+                        </div>
+                    </div>
+
+                    <div class="group flex flex-col  rounded-2xl bg-accordion p-5 text-white" tabindex="1">
+                        <div class="flex cursor-pointer py-1 items-center justify-between">
+                            <div class="flex gap-5 items-center">
+                                <img src="./img/netflix.png" alt="netflix logo" class="w-11 h-auto rounded-2xl">
+                                <span class="text-lg"> Netflix </span>
+                            </div>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Chevron-icon-drop-down-menu-WHITE.png"
+                                class="h-auto w-4 transition-all duration-500 group-focus:-rotate-180" />
+                        </div>
+                        <div class="invisible h-auto max-h-0 items-center opacity-0 transition-all group-focus:visible group-focus:max-h-screen group-focus:opacity-100 group-focus:duration-1000">
+                            <p class="mt-2 text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                            commodo consequat.</p>
+                            <div class="server-wrapper flex flex-wrap gap-4 mt-6 text-sm">
+                                <button class="serverItem px-3 py-2 server-active">Server 1</button>
+                                <button class="serverItem px-3 py-2">Server 2</button>
+                                <button class="serverItem px-3 py-2">Server 3</button>
+                                <button class="serverItem px-3 py-2">Server 4</button>
+                                <button class="serverItem px-3 py-2">Server 5</button>
+                                <button class="serverItem px-3 py-2 server-disable">
+                                    Server 6
+                                    <span class="serverTooltip">Under Maintenance</span>
+                                    <img src="./img/disable-icon.png" alt="">
+                                </button>
+
+                                <button class="serverItem px-3 py-2 server-disable">
+                                    Server 7
+                                    <span class="serverTooltip">Under Maintenance</span>
+                                    <img src="./img/disable-icon.png" alt="">
+                                </button>
+                                <button class="serverItem px-3 py-2 server-disable">
+                                    Server 8
+                                    <span class="serverTooltip">Under Maintenance</span>
+                                    <img src="./img/disable-icon.png" alt="">
+                                </button>
+                            </div>
+                            
+                            
+                            
+                            
+                        </div>
+                    </div>
+
+                    <div class="group flex flex-col  rounded-2xl bg-accordion p-5 text-white" tabindex="1">
+                        <div class="flex cursor-pointer py-1 items-center justify-between">
+                            <div class="flex gap-5 items-center">
+                                <img src="./img/netflix.png" alt="netflix logo" class="w-11 h-auto rounded-2xl">
+                                <span class="text-lg"> Netflix </span>
+                            </div>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Chevron-icon-drop-down-menu-WHITE.png"
+                                class="h-auto w-4 transition-all duration-500 group-focus:-rotate-180" />
+                        </div>
+                        <div class="invisible h-auto max-h-0 items-center opacity-0 transition-all group-focus:visible group-focus:max-h-screen group-focus:opacity-100 group-focus:duration-1000">
+                            <p class="mt-2 text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                            commodo consequat.</p>
+                            <div class="server-wrapper flex flex-wrap gap-4 mt-6 text-sm">
+                                <button class="serverItem px-3 py-2 server-active">Server 1</button>
+                                <button class="serverItem px-3 py-2">Server 2</button>
+                                <button class="serverItem px-3 py-2">Server 3</button>
+                                <button class="serverItem px-3 py-2">Server 4</button>
+                                <button class="serverItem px-3 py-2">Server 5</button>
+                                <button class="serverItem px-3 py-2 server-disable">
+                                    Server 6
+                                    <span class="serverTooltip">Under Maintenance</span>
+                                    <img src="./img/disable-icon.png" alt="">
+                                </button>
+
+                                <button class="serverItem px-3 py-2 server-disable">
+                                    Server 7
+                                    <span class="serverTooltip">Under Maintenance</span>
+                                    <img src="./img/disable-icon.png" alt="">
+                                </button>
+                                <button class="serverItem px-3 py-2 server-disable">
+                                    Server 8
+                                    <span class="serverTooltip">Under Maintenance</span>
+                                    <img src="./img/disable-icon.png" alt="">
+                                </button>
+                            </div>
+                            
+                            
+                            
+                            
+                        </div>
+                    </div>
+
+                    <div class="group flex flex-col  rounded-2xl bg-accordion p-5 text-white" tabindex="1">
+                        <div class="flex cursor-pointer py-1 items-center justify-between">
+                            <div class="flex gap-5 items-center">
+                                <img src="./img/netflix.png" alt="netflix logo" class="w-11 h-auto rounded-2xl">
+                                <span class="text-lg"> Netflix </span>
+                            </div>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Chevron-icon-drop-down-menu-WHITE.png"
+                                class="h-auto w-4 transition-all duration-500 group-focus:-rotate-180" />
+                        </div>
+                        <div class="invisible h-auto max-h-0 items-center opacity-0 transition-all group-focus:visible group-focus:max-h-screen group-focus:opacity-100 group-focus:duration-1000">
+                            <p class="mt-2 text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                            commodo consequat.</p>
+                            <div class="server-wrapper flex flex-wrap gap-4 mt-6 text-sm">
+                                <button class="serverItem px-3 py-2 server-active">Server 1</button>
+                                <button class="serverItem px-3 py-2">Server 2</button>
+                                <button class="serverItem px-3 py-2">Server 3</button>
+                                <button class="serverItem px-3 py-2">Server 4</button>
+                                <button class="serverItem px-3 py-2">Server 5</button>
+                                <button class="serverItem px-3 py-2 server-disable">
+                                    Server 6
+                                    <span class="serverTooltip">Under Maintenance</span>
+                                    <img src="./img/disable-icon.png" alt="">
+                                </button>
+
+                                <button class="serverItem px-3 py-2 server-disable">
+                                    Server 7
+                                    <span class="serverTooltip">Under Maintenance</span>
+                                    <img src="./img/disable-icon.png" alt="">
+                                </button>
+                                <button class="serverItem px-3 py-2 server-disable">
+                                    Server 8
+                                    <span class="serverTooltip">Under Maintenance</span>
+                                    <img src="./img/disable-icon.png" alt="">
+                                </button>
+                            </div>
+                            
+                            
+                            
+                            
+                        </div>
+                    </div>
+
+                    <div class="group flex flex-col  rounded-2xl bg-accordion p-5 text-white" tabindex="1">
+                        <div class="flex cursor-pointer py-1 items-center justify-between">
+                            <div class="flex gap-5 items-center">
+                                <img src="./img/netflix.png" alt="netflix logo" class="w-11 h-auto rounded-2xl">
+                                <span class="text-lg"> Netflix </span>
+                            </div>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Chevron-icon-drop-down-menu-WHITE.png"
+                                class="h-auto w-4 transition-all duration-500 group-focus:-rotate-180" />
+                        </div>
+                        <div class="invisible h-auto max-h-0 items-center opacity-0 transition-all group-focus:visible group-focus:max-h-screen group-focus:opacity-100 group-focus:duration-1000">
+                            <p class="mt-2 text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                            commodo consequat.</p>
+                            <div class="server-wrapper flex flex-wrap gap-4 mt-6 text-sm">
+                                <button class="serverItem px-3 py-2 server-active">Server 1</button>
+                                <button class="serverItem px-3 py-2">Server 2</button>
+                                <button class="serverItem px-3 py-2">Server 3</button>
+                                <button class="serverItem px-3 py-2">Server 4</button>
+                                <button class="serverItem px-3 py-2">Server 5</button>
+                                <button class="serverItem px-3 py-2 server-disable">
+                                    Server 6
+                                    <span class="serverTooltip">Under Maintenance</span>
+                                    <img src="./img/disable-icon.png" alt="">
+                                </button>
+
+                                <button class="serverItem px-3 py-2 server-disable">
+                                    Server 7
+                                    <span class="serverTooltip">Under Maintenance</span>
+                                    <img src="./img/disable-icon.png" alt="">
+                                </button>
+                                <button class="serverItem px-3 py-2 server-disable">
+                                    Server 8
+                                    <span class="serverTooltip">Under Maintenance</span>
+                                    <img src="./img/disable-icon.png" alt="">
+                                </button>
+                            </div>
+                            
+                            
+                            
+                            
+                        </div>
+                    </div>
+
+                    <div class="group flex flex-col  rounded-2xl bg-accordion p-5 text-white" tabindex="1">
+                        <div class="flex cursor-pointer py-1 items-center justify-between">
+                            <div class="flex gap-5 items-center">
+                                <img src="./img/netflix.png" alt="netflix logo" class="w-11 h-auto rounded-2xl">
+                                <span class="text-lg"> Netflix </span>
+                            </div>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Chevron-icon-drop-down-menu-WHITE.png"
+                                class="h-auto w-4 transition-all duration-500 group-focus:-rotate-180" />
+                        </div>
+                        <div class="invisible h-auto max-h-0 items-center opacity-0 transition-all group-focus:visible group-focus:max-h-screen group-focus:opacity-100 group-focus:duration-1000">
+                            <p class="mt-2 text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                            commodo consequat.</p>
+                            <div class="server-wrapper flex flex-wrap gap-4 mt-6 text-sm">
+                                <button class="serverItem px-3 py-2 server-active">Server 1</button>
+                                <button class="serverItem px-3 py-2">Server 2</button>
+                                <button class="serverItem px-3 py-2">Server 3</button>
+                                <button class="serverItem px-3 py-2">Server 4</button>
+                                <button class="serverItem px-3 py-2">Server 5</button>
+                                <button class="serverItem px-3 py-2 server-disable">
+                                    Server 6
+                                    <span class="serverTooltip">Under Maintenance</span>
+                                    <img src="./img/disable-icon.png" alt="">
+                                </button>
+
+                                <button class="serverItem px-3 py-2 server-disable">
+                                    Server 7
+                                    <span class="serverTooltip">Under Maintenance</span>
+                                    <img src="./img/disable-icon.png" alt="">
+                                </button>
+                                <button class="serverItem px-3 py-2 server-disable">
+                                    Server 8
+                                    <span class="serverTooltip">Under Maintenance</span>
+                                    <img src="./img/disable-icon.png" alt="">
+                                </button>
+                            </div>
+                            
+                            
+                            
+                            
+                        </div>
+                    </div>
+
+                    <div class="group flex flex-col  rounded-2xl bg-accordion p-5 text-white" tabindex="1">
+                        <div class="flex cursor-pointer py-1 items-center justify-between">
+                            <div class="flex gap-5 items-center">
+                                <img src="./img/netflix.png" alt="netflix logo" class="w-11 h-auto rounded-2xl">
+                                <span class="text-lg"> Netflix </span>
+                            </div>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Chevron-icon-drop-down-menu-WHITE.png"
+                                class="h-auto w-4 transition-all duration-500 group-focus:-rotate-180" />
+                        </div>
+                        <div class="invisible h-auto max-h-0 items-center opacity-0 transition-all group-focus:visible group-focus:max-h-screen group-focus:opacity-100 group-focus:duration-1000">
+                            <p class="mt-2 text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                            commodo consequat.</p>
+                            <div class="server-wrapper flex flex-wrap gap-4 mt-6 text-sm">
+                                <button class="serverItem px-3 py-2 server-active">Server 1</button>
+                                <button class="serverItem px-3 py-2">Server 2</button>
+                                <button class="serverItem px-3 py-2">Server 3</button>
+                                <button class="serverItem px-3 py-2">Server 4</button>
+                                <button class="serverItem px-3 py-2">Server 5</button>
+                                <button class="serverItem px-3 py-2 server-disable">
+                                    Server 6
+                                    <span class="serverTooltip">Under Maintenance</span>
+                                    <img src="./img/disable-icon.png" alt="">
+                                </button>
+
+                                <button class="serverItem px-3 py-2 server-disable">
+                                    Server 7
+                                    <span class="serverTooltip">Under Maintenance</span>
+                                    <img src="./img/disable-icon.png" alt="">
+                                </button>
+                                <button class="serverItem px-3 py-2 server-disable">
+                                    Server 8
+                                    <span class="serverTooltip">Under Maintenance</span>
+                                    <img src="./img/disable-icon.png" alt="">
+                                </button>
+                            </div>
+                            
+                            
+                            
+                            
+                        </div>
+                    </div>
+
+                    <div class="group flex flex-col  rounded-2xl bg-accordion p-5 text-white" tabindex="1">
+                        <div class="flex cursor-pointer py-1 items-center justify-between">
+                            <div class="flex gap-5 items-center">
+                                <img src="./img/netflix.png" alt="netflix logo" class="w-11 h-auto rounded-2xl">
+                                <span class="text-lg"> Netflix </span>
+                            </div>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Chevron-icon-drop-down-menu-WHITE.png"
+                                class="h-auto w-4 transition-all duration-500 group-focus:-rotate-180" />
+                        </div>
+                        <div class="invisible h-auto max-h-0 items-center opacity-0 transition-all group-focus:visible group-focus:max-h-screen group-focus:opacity-100 group-focus:duration-1000">
+                            <p class="mt-2 text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                            commodo consequat.</p>
+                            <div class="server-wrapper flex flex-wrap gap-4 mt-6 text-sm">
+                                <button class="serverItem px-3 py-2 server-active">Server 1</button>
+                                <button class="serverItem px-3 py-2">Server 2</button>
+                                <button class="serverItem px-3 py-2">Server 3</button>
+                                <button class="serverItem px-3 py-2">Server 4</button>
+                                <button class="serverItem px-3 py-2">Server 5</button>
+                                <button class="serverItem px-3 py-2 server-disable">
+                                    Server 6
+                                    <span class="serverTooltip">Under Maintenance</span>
+                                    <img src="./img/disable-icon.png" alt="">
+                                </button>
+
+                                <button class="serverItem px-3 py-2 server-disable">
+                                    Server 7
+                                    <span class="serverTooltip">Under Maintenance</span>
+                                    <img src="./img/disable-icon.png" alt="">
+                                </button>
+                                <button class="serverItem px-3 py-2 server-disable">
+                                    Server 8
+                                    <span class="serverTooltip">Under Maintenance</span>
+                                    <img src="./img/disable-icon.png" alt="">
+                                </button>
+                            </div>
+                            
+                            
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+            
+        </div>
+    </section>
+
+    <script src="./js/swiper-bundle.min.js"></script>
+    <script src="popup.js"></script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
